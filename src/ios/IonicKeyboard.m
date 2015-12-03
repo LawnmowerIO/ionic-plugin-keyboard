@@ -149,9 +149,11 @@
 
 
 - (void) styleDark:(CDVInvokedUrlCommand*)command {
+    /*
     if (!command.arguments || ![command.arguments count]){
       return;
     }
+    */
     id value = [command.arguments objectAtIndex:0];
     
     self.styleDark = [value boolValue];
