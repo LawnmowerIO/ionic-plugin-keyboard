@@ -87,6 +87,8 @@
 }
 
 - (void)setStyleDark:(BOOL)styleDark {
+    self.webView.styleDark = YES;
+    /*
     if (styleDark == _styleDark) {
         return;
     }
@@ -96,6 +98,7 @@
     else {
         self.webView.styleDark = NO;
     }
+    */
 
     _styleDark = styleDark;
 }
