@@ -16,7 +16,7 @@
     //set defaults
     self.hideKeyboardAccessoryBar = YES;
     self.disableScroll = NO;
-    self.styleDark = YES;
+    self.styleDark = NO;
     
     _keyboardShowObserver = [nc addObserverForName:UIKeyboardWillShowNotification
                                object:nil
@@ -87,8 +87,6 @@
 }
 
 - (void)setStyleDark:(BOOL)styleDark {
-    self.webView.styleDark = YES;
-    /*
     if (styleDark == _styleDark) {
         return;
     }
@@ -98,7 +96,6 @@
     else {
         self.webView.styleDark = NO;
     }
-    */
 
     _styleDark = styleDark;
 }
@@ -152,11 +149,9 @@
 
 
 - (void) styleDark:(CDVInvokedUrlCommand*)command {
-    /*
     if (!command.arguments || ![command.arguments count]){
       return;
     }
-    */
     id value = [command.arguments objectAtIndex:0];
     
     self.styleDark = [value boolValue];

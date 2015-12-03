@@ -70,7 +70,6 @@ static Class hackishFixClass = Nil;
 }
 
 - (BOOL) styleDark {
-    return true;
     UIView *browserView = [self hackishlyFoundBrowserView];
     if (browserView == nil) {
       return false;
@@ -98,7 +97,7 @@ static Class hackishFixClass = Nil;
       class_replaceMethod( [browserView class], @selector(keyboardAppearance), imp, typeEncoding );
     }
     else {
-      Method m = class_getInstanceMethod( [self class], @selector( darkKeyboardAppearanceTemplateMethod ) );
+      Method m = class_getInstanceMethod( [self class], @selector( lightKeyboardAppearanceTemplateMethod ) );
       IMP imp = method_getImplementation( m );
       const char* typeEncoding = method_getTypeEncoding( m );
       class_replaceMethod( [browserView class], @selector(keyboardAppearance), imp, typeEncoding );
