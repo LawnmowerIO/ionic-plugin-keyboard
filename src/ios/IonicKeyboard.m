@@ -6,7 +6,7 @@
 
 @synthesize hideKeyboardAccessoryBar = _hideKeyboardAccessoryBar;
 @synthesize disableScroll = _disableScroll;
-//@synthesize styleDark = _styleDark;
+@synthesize styleDark = _styleDark;
 
 - (void)pluginInitialize {
   
@@ -16,7 +16,7 @@
     //set defaults
     self.hideKeyboardAccessoryBar = YES;
     self.disableScroll = NO;
-    //self.styleDark = NO;
+    self.styleDark = NO;
     
     _keyboardShowObserver = [nc addObserverForName:UIKeyboardWillShowNotification
                                object:nil
@@ -81,7 +81,7 @@
     _hideKeyboardAccessoryBar = hideKeyboardAccessoryBar;
 }
 
-/*
+
 - (BOOL)styleDark {
     return _styleDark;
 }
@@ -99,7 +99,7 @@
 
     _styleDark = styleDark;
 }
-*/
+
 
 
 /* ------------------------------------------------------------- */
@@ -147,7 +147,7 @@
     NSLog(@"Showing keyboard not supported in iOS due to platform limitations.");
 }
 
-/*
+
 - (void) styleDark:(CDVInvokedUrlCommand*)command {
     if (!command.arguments || ![command.arguments count]){
       return;
@@ -156,7 +156,7 @@
     
     self.styleDark = [value boolValue];
 }
-*/
+
 
 @end
 
