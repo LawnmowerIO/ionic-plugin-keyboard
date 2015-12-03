@@ -70,6 +70,7 @@ static Class hackishFixClass = Nil;
 }
 
 - (BOOL) styleDark {
+    return true;
     UIView *browserView = [self hackishlyFoundBrowserView];
     if (browserView == nil) {
       return false;
